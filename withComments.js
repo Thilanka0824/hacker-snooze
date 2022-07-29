@@ -6,9 +6,9 @@ let orderedList = document.createElement("ol");
 
 
 let id = []; //array for id numbers
-let url100 = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty' //this is the API link for top stories  
+let url100 = 'https://hacker-news.firebaseio.com/v0/topstories.json' //this is the API link for top stories  
 
-let urlId = `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty` //this is the API link for each id //using string inerpolation because we will loop thru an array and log each id 
+let urlId = `https://hacker-news.firebaseio.com/v0/item/${id}.json` //this is the API link for each id //using string inerpolation because we will loop thru an array and log each id 
 
 //API function for top 100 stories
 let apiCallfor100 = async () => { 
@@ -28,7 +28,7 @@ let apiCallforId = async () => {
    
     for (let idNumber of id) { //for each 'idNumber' in array 'id' do this
         
-        let response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${idNumber}.json?print=pretty`) //fetches raw data from 'idNumber'
+        let response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${idNumber}.json`) //fetches raw data from 'idNumber'
 
         let dataStream = await response.json(); //parses raw data from response
         console.log(dataStream)
@@ -53,6 +53,29 @@ let newDiv = () => {
     body.appendChild(parent) //appends parent to the body
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 let body = document.querySelector('body'); 
